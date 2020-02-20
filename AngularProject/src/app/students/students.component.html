@@ -1,0 +1,32 @@
+<div>
+<table>
+  <thead>
+  <tr>
+    <th>studentId</th>
+    <th>StudentName</th>
+    <th colspan="3">Address</th>
+    <th colspan="2">Modification</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let std of student">
+  <tr>
+    <td>{{std.sid}}</td>
+    <td>{{std.sname}}</td>
+    <td>{{std.address.dist}}</td>
+    <td>{{std.address.state}}</td>
+
+    <td>{{std.address.zip}}</td>
+    <td><button (click)="viewDetail(std.sid)">view</button></td>
+    <td><button (click)="editPage(std.sid)">edit</button></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<br><br>
+
+<div>
+  <app-marks-detail [marks]="marksArray"></app-marks-detail>
+</div>
+
+
+
