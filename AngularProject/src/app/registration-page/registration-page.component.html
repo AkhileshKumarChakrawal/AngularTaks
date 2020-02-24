@@ -1,0 +1,76 @@
+<p>registration-page works!</p>
+<form [formGroup]="StudentRegistration" (ngSubmit)="RegSubmit()">
+  <div>
+  <label>
+    First Name:
+    <input type="text" formControlName="FirstName" >
+  </label>
+  </div>
+  <div>
+  <label>
+    Last Name:
+    <input type="text" formControlName="LastName">
+  </label>
+  </div>
+  <div>
+    <label>
+      Date of Birth:
+      <input type="date" formControlName="Dob">
+    </label>
+  </div>
+  <div>
+    <label>
+      Gender:
+      <input type="radio" formControlName="gender" value="male">Male
+      <input type="radio" formControlName="gender" value="female">Female
+    </label>
+  </div>
+  <div>
+    <label>
+      Email:
+      <input type="text" formControlName="email">
+    </label>
+  </div>
+  <div>
+    <label>
+      password:
+      <input type="text" formControlName="pass">
+    </label>
+  </div>
+  <div>
+    <label>
+      Confirm Password:
+      <input type="text" formControlName="confirmpass">
+    </label>
+  </div>
+
+  <div [formGroupName]="marks">
+    <h2>Marks</h2>
+  <div>
+    <label>
+     Math :
+      <input type="text" formControlName="math">
+    </label>
+  </div>
+    <div>
+      <label>
+        Physics :
+        <input type="text" formControlName="physics">
+      </label>
+    </div>
+    <div>
+      <label>
+        English:
+        <input type="text" formControlName="english">
+      </label>
+    </div>
+
+  </div>
+
+  <div>
+    <label>
+      <input type="submit" value="submit">
+    </label>
+  </div>
+</form>
+

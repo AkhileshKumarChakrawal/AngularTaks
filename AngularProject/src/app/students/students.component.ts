@@ -44,7 +44,6 @@ export class StudentsComponent implements OnInit {
   }
 
   editPage(studentId){
-  this.routeStudent.navigate(['/student' , studentId]);
-
+  this.routeStudent.navigate(['./students' , studentId]);
   }
 }

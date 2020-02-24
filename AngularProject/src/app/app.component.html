@@ -1,4 +1,7 @@
 
-<app-students></app-students>
+
+<button (click)="OpenFormPage()">Registration</button>
+<app-students *ngIf="router.url=='/'"></app-students>
 
 <router-outlet></router-outlet>
+
