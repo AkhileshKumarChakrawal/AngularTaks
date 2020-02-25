@@ -4,6 +4,7 @@ import {StudentsComponent} from "./students/students.component";
 import {MarksDetailComponent} from "./marks-detail/marks-detail.component";
 import {StudentEditComponent} from "./student-edit/student-edit.component";
 import {RegistrationPageComponent} from "./registration-page/registration-page.component";
+import {LoginPageComponent} from "./login-page/login-page.component";
 
 
 const routes: Routes = [
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path : 'regform' , component : RegistrationPageComponent
+  },
+  {
+    path : 'login' , component : LoginPageComponent
   }
 
  /* {path : 'students' , component : StudentsComponent},

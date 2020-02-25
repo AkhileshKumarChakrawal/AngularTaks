@@ -1,7 +1,9 @@
 
 
 <button (click)="OpenFormPage()">Registration</button>
+<button [disabled] = "buttonDisable" (click)="OpenLoginPage()">LogIn</button>
 <app-students *ngIf="router.url=='/'"></app-students>
 
 <router-outlet></router-outlet>
+
 

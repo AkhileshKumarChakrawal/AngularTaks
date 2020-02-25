@@ -7,9 +7,22 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'AngularProject';
-  constructor(private router : Router){}
+  buttonDisable : boolean;
+  constructor(private router : Router){
+    localStorage.clear();
+  console.log(localStorage);
+    if(localStorage.length > 0){
+      this.buttonDisable = false;
+    }
+    else{
+      this.buttonDisable = true;
+    }
+  }
   OpenFormPage(){
     this.router.navigate(['/regform']);
+  }
+  OpenLoginPage(){
+    this.router.navigate(['/login']);
   }
 }
 
