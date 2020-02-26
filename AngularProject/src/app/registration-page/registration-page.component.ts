@@ -12,40 +12,41 @@ export class RegistrationPageComponent implements OnInit {
   marks : FormGroup;
   storeData : any ={};
   constructor(private formbuilder : FormBuilder) {
-    /*this.StudentRegistration = this.formbuilder.group({
-      FirstName : ['', Validators.required],
-      LastName : ['' , Validators.required],
-      Dob : ['' , Validators.required],
-      gender : ['' , Validators.required],
-      email : ['' , Validators.required],
-      pass : ['' , Validators.required],
-      confirmpass : ['' , Validators.required],
-      marks : this.formbuilder.group({
-        math : ['', Validators.required],
-        physics : ['' , Validators.required],
-        English : ['', Validators.required]
-      })
-    });
-*/
 
-    this.StudentRegistration = new FormGroup({
-      FirstName : new FormControl('', Validators.required),
-      LastName : new FormControl(''),
-      Dob : new FormControl(''),
-      gender : new FormControl(''),
-      email : new FormControl(''),
-      pass : new FormControl(''),
-      confirmpass : new FormControl(''),
-      marks : new FormGroup({
-        math : new FormControl(''),
-        physics : new FormControl(''),
-        English : new FormControl('')
-      })
+
+    this.StudentRegistration = this.formbuilder.group({
+
+      email: new FormControl('', [Validators.required]),
     });
   }
 
   ngOnInit() {
      }
+     get firstname(){
+    return this.StudentRegistration.get('FirstName');
+     }
+     get lastname(){
+    return this.StudentRegistration.get('LastName');
+     }
+    get emailid(){
+    return this.StudentRegistration.get('email');
+    }
+    get password(){
+    return this.StudentRegistration.get('pass');
+    }
+    get confirmpwd(){
+    return this.StudentRegistration.get('Confirmpass');
+    }
+    get maths(){
+    return this.StudentRegistration.get('math');
+    }
+    get physics(){
+    return this.StudentRegistration.get('physics');
+    }
+    get english(){
+    return this.StudentRegistration.get('English');
+    }
+
   RegSubmit(){
     console.log(this.StudentRegistration.value);
     let emailId = this.StudentRegistration.get('email').value;
