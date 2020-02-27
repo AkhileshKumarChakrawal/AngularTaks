@@ -1,12 +1,12 @@
 <div>
   <h2 style="color: dodgerblue; text-align: center">Student Details</h2>
-<table>
+<table class="table table-striped table-bordered table-hover">
   <thead>
   <tr>
-    <th>studentId</th>
-    <th>StudentName</th>
-    <th colspan="3">Address</th>
-    <th colspan="2">Modification</th>
+    <th scope="col">studentId</th>
+    <th scope="col">StudentName</th>
+    <th scope="col" colspan="3">Address</th>
+    <th scope="col" colspan="2">Modification</th>
   </tr>
   </thead>
   <tbody *ngFor="let std of student">
@@ -24,6 +24,7 @@
 </table>
 </div>
 <br>
+
 
 <div>
   <app-marks-detail [marks]="marksArray"></app-marks-detail>

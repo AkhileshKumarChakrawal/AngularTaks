@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
@@ -9,16 +10,22 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class LoginPageComponent implements OnInit {
 
   Studentlogin : FormGroup;
-  constructor() { }
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  loginMsg ='';
+  constructor(private fb : FormBuilder , private router : Router) { }
    emailGet = localStorage.getItem('emaildata');
     passwordGet = localStorage.getItem('passdata');
 
   ngOnInit() {
-    this.Studentlogin = new FormGroup({
-      email : new FormControl(),
-      password : new FormControl()
+    this.Studentlogin = this.fb.group({
+      email : ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+      password : ['', Validators.required]
     });
 
+  }
+
+  get fval() {
+    return this.Studentlogin.controls;
   }
 
   LoginSubmit(){
@@ -27,8 +34,10 @@ export class LoginPageComponent implements OnInit {
     if(this.Studentlogin.get('email').value === this.emailGet && this.Studentlogin.get('password').value === this.passwordGet){
       localStorage.clear();
       console.log(localStorage);
+      this.router.navigate(['/students']);
     }
     else{
+      this.loginMsg ="email and password not match ";
       console.log("email and password not match");
 
     }

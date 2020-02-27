@@ -9,9 +9,9 @@ import {StudentRegistrationComponent} from "./student-registration/student-regis
 
 
 const routes: Routes = [
- /* {
+  {
     path : '' , redirectTo : '/students' , pathMatch : 'full'
-  },*/
+  },
 
   {
     path :'students' ,  children :[

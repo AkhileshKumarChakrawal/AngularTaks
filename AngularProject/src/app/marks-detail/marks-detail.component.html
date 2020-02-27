@@ -1,23 +1,23 @@
 
 <div>
   <h2 style="color: dodgerblue; text-align: center">Student Marks</h2>
-<table>
+<table class="table table-striped table-bordered table-hover">
   <thead>
   <tr>
-    <th>sid</th>
-    <th>name</th>
-    <th>math</th>
-    <th>english</th>
-    <th>physics</th>
+    <th scope="col">sid</th>
+    <th scope="col">name</th>
+    <th scope="col">math</th>
+    <th scope="col">english</th>
+    <th scope="col">physics</th>
   </tr>
   </thead>
-  <tbody>
-  <!--<td>{{marks.sid}}</td>
+  <tbody [hidden]="check">
+  <td>{{marks.sid}}</td>
   <td>{{marks.name}}</td>
   <td>{{marks.math}}</td>
   <td>{{marks.english}}</td>
   <td>{{marks.physics}}</td>
-  --></tbody>
+  </tbody>
 </table>
 
 

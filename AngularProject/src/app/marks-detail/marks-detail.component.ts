@@ -7,10 +7,13 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MarksDetailComponent implements OnInit {
 
-
-  @Input()  marks;
+  check : boolean;
+  @Input()marks : {};
   constructor() {
-    console.log(this.marks);
+    console.log(typeof this.marks);
+    if(typeof this.marks == "undefined"){
+      this.check = false;
+    }
   }
 
   ngOnInit() {
