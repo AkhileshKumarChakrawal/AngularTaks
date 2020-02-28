@@ -11,6 +11,7 @@ export class StudentRegistrationComponent implements OnInit {
 
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   passwordPattern = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&].{6,}";
+  numberPattern = "^[0-9]*$";
   status = "";
   constructor(private fb : FormBuilder , private router : Router) { }
 
@@ -23,13 +24,13 @@ submitted = false;
       dob : ['', Validators.required],
       gender :['', Validators.required],
       email: ['', [Validators.required,Validators.pattern(this.emailPattern)]],
-      password: ['', [Validators.required,Validators.minLength(6), Validators.pattern(this.passwordPattern)]],
+      password: ['', [Validators.required,Validators.minLength(8), Validators.pattern(this.passwordPattern)]],
       confirmPassword: ['', Validators.required],
 
       Marks : this.fb.group({
-        math : ['', [Validators.required,Validators.pattern("^[0-9]*$")]],
-        english : ['', Validators.required],
-        science : ['', Validators.required]
+        math : ['', [Validators.required,Validators.pattern(this.numberPattern)]],
+        english : ['', [Validators.required, Validators.pattern(this.numberPattern)]],
+        science : ['', [Validators.required, Validators.pattern(this.numberPattern)]]
         /*physics : [''],
         english : ['']*/
       })

@@ -32,13 +32,15 @@ export class LoginPageComponent implements OnInit {
     console.log(this.Studentlogin.value);
     console.log(localStorage);
     if(this.Studentlogin.get('email').value === this.emailGet && this.Studentlogin.get('password').value === this.passwordGet){
-      localStorage.clear();
-      console.log(localStorage);
+     //localStorage.removeItem('emaildata');
+    // localStorage.removeItem('passdata');
+     localStorage.clear();
+      console.log(localStorage.getItem('emaildata'));
       this.router.navigate(['/students']);
     }
     else{
-      this.loginMsg ="email and password not match ";
-      console.log("email and password not match");
+      this.loginMsg ="email and password is not matching ";
+      console.log("email and password not matching");
 
     }
 

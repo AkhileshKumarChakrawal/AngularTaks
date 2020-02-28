@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/students">Home</a>
+  <!--<a class="navbar-brand" routerLink="/students">Home</a>-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,9 +9,16 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <a class="navbar-brand" routerLink="/regform">Registration</a>      </li>
-      <li class="nav-item" [hidden]="buttonDisable">
-        <a class="navbar-brand" routerLink="/login">Registration</a>      </li>
+        <a class="navbar-brand" routerLink="/students">Home</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="navbar-brand" routerLink="/regform">Registration</a>
+      </li>
+
+      <li class="nav-item" *ngIf="enabledata">
+        <a class="navbar-brand" routerLink="/login" >Login</a>
+      </li>
 
     </ul>
 
@@ -23,7 +30,7 @@
 <button  (click)="OpenLoginPage()">LogIn</button>
 -->
 
-  <!--<app-students *ngIf="router.url=='/'"></app-students>-->
+
 
 <router-outlet></router-outlet>
 

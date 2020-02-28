@@ -1,8 +1,8 @@
 
-<div class="container">
+<div class="container" >
   <div class="row">
-    <div class="col-md-4 offset-md-4">
-      <h2>Student Registration</h2>
+    <div class="col-md-4 offset-md-4" style="border: 1px solid #007399">
+      <h2><u>Student Registration</u></h2>
       <form [formGroup]="StudentForm" (ngSubmit)="signup();">
         <div class="formbox">
 
@@ -78,7 +78,7 @@
                 password is required
               </div>
               <div *ngIf="fval.password.errors.minlength">
-                password contain atleast 6 char
+                password contain atleast 8 character
               </div>
               <div *ngIf="fval.password.errors.pattern">
                 password contain atleast 1 capital letter , 1 lower letter, 1 number, 1 speical character
@@ -99,29 +99,38 @@
 
           <div formGroupName="Marks" >
           <div class="form-group" [ngClass]="{'has-error' : math.errors && (math.dirty || math.touched)}">
-            <input type="number" formControlName="math" class="form-control" placeholder="subject number"
+            <input type="text" formControlName="math" class="form-control" placeholder="subject number"
                    [ngClass]="{ 'is-invalid': submitted && math.errors }"/>
             <div class="help-block" *ngIf="math.errors && (math.dirty || math.touched)">
               <div *ngIf="math.errors.required">
                 Subject Marks is required and must be number
               </div>
+              <div *ngIf="math.errors.pattern">
+                marks should be number
+              </div>
             </div>
           </div>
             <div class="form-group" [ngClass]="{'has-error' : english.errors && (english.dirty || english.touched)}">
-              <input type="number" formControlName="english" class="form-control" placeholder="subject number"
+              <input type="text" formControlName="english" class="form-control" placeholder="subject number"
                      [ngClass]="{ 'is-invalid': submitted && english.errors }"/>
               <div class="help-block" *ngIf="math.errors && (english.dirty || english.touched)">
                 <div *ngIf="english.errors.required">
                   Subject Marks is required and must be number
                 </div>
+                <div *ngIf="english.errors.pattern">
+                  marks should be number
+                </div>
               </div>
             </div>
             <div class="form-group" [ngClass]="{'has-error' : science.errors && (science.dirty || science.touched)}">
-              <input type="number" formControlName="science" class="form-control" placeholder="subject number"
+              <input type="text" formControlName="science" class="form-control" placeholder="subject number"
                      [ngClass]="{ 'is-invalid': submitted && science.errors }"/>
               <div class="help-block" *ngIf="science.errors && (science.dirty || science.touched)">
                 <div *ngIf="science.errors.required">
                   Subject Marks is required must be number
+                </div>
+                <div *ngIf="science.errors.pattern">
+                  marks should be number
                 </div>
               </div>
             </div>

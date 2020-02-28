@@ -12,6 +12,7 @@ import { RegistrationPageComponent } from './registration-page/registration-page
 import { LoginPageComponent } from './login-page/login-page.component';
 import { StudentRegistrationComponent } from './student-registration/student-registration.component';
 import { StudentHomeComponent } from './student-home/student-home.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StudentHomeComponent } from './student-home/student-home.component';
     RegistrationPageComponent,
     LoginPageComponent,
     StudentRegistrationComponent,
-    StudentHomeComponent
+    StudentHomeComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 @Component({
   selector: 'app-root',
@@ -7,26 +7,27 @@ import {Router} from '@angular/router';
 })
 export class AppComponent {
   title = 'AngularProject';
-  buttonDisable : boolean;
-  pdata = localStorage.getItem('passdata');
-  constructor(private router : Router){
-localStorage.clear();
-  console.log(localStorage);
-    if(localStorage.length > 0){
-      this.buttonDisable = false;
+  enabledata : boolean = false;
+  password = localStorage.getItem('passdata');
+  constructor(private router : Router) {
+//localStorage.clear();
+    console.log("appdata"+localStorage);
+
+    if (localStorage.length != 0) {
+      this.enabledata = true;
     }
-    else if(localStorage.length ==0){
-      this.buttonDisable = true;
-    }
-    console.log(this.pdata);
 
   }
 
-  OpenFormPage(){
+  /*OpenFormPage(){
     this.router.navigate(['/regform']);
   }
   OpenLoginPage(){
     this.router.navigate(['/login']);
+  }*/
+
+  buttonDisables(){
+    return  typeof this.password !== 'undefined' && this.password !== null && this.password !=='';
   }
 }
 

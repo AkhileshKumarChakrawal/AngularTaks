@@ -26,7 +26,7 @@ export class StudentsComponent implements OnInit {
   ];
   //public studMarks : any;
   public marksArray : {};
-
+  selectedId : number;
   constructor(private routeStudent : Router) { }
 
   ngOnInit() {
@@ -34,6 +34,7 @@ export class StudentsComponent implements OnInit {
 
   viewDetail(studentId){
   console.log(studentId);
+  this.selectedId = studentId;
   for(let i = 0; i<this.Marks.length; i++){
   if(this.Marks[i].sid == studentId){
     this.marksArray =  this.Marks[i];
